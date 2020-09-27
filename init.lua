@@ -121,9 +121,6 @@ cparams.parse_command_parameters = function(tree, name, params)
         return true, idx - start_idx, ret_params
     end
     local b, consume, ret_params = matches(tree[2], param_tokens)
-    if consume < #param_tokens then
-        minetest.chat_send_player(name, "Invalid format! You have " .. tostring(#param_tokens - consume) .. " spare arguments!")
-    end
 
     if (b == false) then
         minetest.chat_send_player(name, "Invalid format!")
